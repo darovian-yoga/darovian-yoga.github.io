@@ -1,0 +1,480 @@
+/* --------GENERAL STYLES -------- */
+:root {
+  --bg-color: hsl(0, 0%, 98%);
+  --text-color: hsl(0, 0%, 27%);
+  --primary-bg-color: rgb(96, 69, 109);
+  --secondary-bg-color: hsl(29, 100%, 56%);
+  --font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font);
+}
+
+button  {
+  padding: 10px;
+  border: none;
+  border-radius: 50px 50px 50px 50px;
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+button:hover  {
+background-color: var( --secondary-bg-color);
+color: var(--bg-color);
+}
+
+ul li {
+  list-style: none;
+}
+
+.resaltado {
+  background-color: yellow;
+}
+/*------ NAVBAR ------*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: var(--primary-bg-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.logo-img {
+  display: flex;
+  justify-content: left;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  display: flex;
+  justify-content: left;
+  padding: 10px;
+}
+
+/*------ nav-links ------*/
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  color: var(--bg-color);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.login {
+  border: 1px solid var(--bg-color);
+  background-color: var(--primary-bg-color);
+}
+
+.login a {
+  color: var(--bg-color);
+  text-decoration: none;
+}
+
+.singup {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.search {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 50px 50px 50px 50px;
+  font-family: var(--font);
+}
+
+.nav-links li a:hover {
+  color: var( --secondary-bg-color);
+}
+
+/*------ burger menu ------*/
+.burger {
+  display: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--bg-color);
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/*------ style mobile ------*/
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+  }
+  
+  .logo {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .burger {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 5px;
+  }
+
+  .burger:hover {
+background-color: var(--secondary-bg-color);
+  }
+  
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 100%;
+    background-color: var(--primary-bg-color);
+    opacity: 0.9;
+    z-index: 999;
+    position: absolute;
+    top: 33vh;
+    left: 0;
+  }
+
+  .nav-links.active li {
+    margin-top: 20px;
+  }
+
+/*------ burger menu ------*/
+  .burger.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+
+  .burger.active .line1 {
+    transform: rotate(-45deg) translate(-9px, 9px);
+  }
+
+  .burger.active .line2 {
+    opacity: 0;
+  }
+
+  .burger.active .line3 {
+    transform: rotate(45deg) translate(-9px, -9px);
+  }
+}
+  
+/*------ CAROUSEL ------*/
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin-top: 114px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-container {
+    margin-top: 32vh;
+  }
+}
+
+.carousel-slide {
+  width: 400%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+  transform: translateX(0%);
+}
+
+.carousel-slide img{
+  display: block;
+  width: 25%;
+  min-height: 10vh;
+  transition: all 0.4s ease;
+}
+
+.carousel-button-prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.carousel-button-next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.carousel-button {
+  width: 50px;
+  font-size: 24px;
+  padding: 10px;
+  outline: none;
+  opacity: 0.5;
+}
+
+.carousel-navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background-color: var(--text-color);
+}
+
+/* ------- Section -------- */
+.up-section {
+  opacity: 0; /* Establecemos la opacidad inicial en 0 para la sección */
+  transform: translateY(50px); /* Establecemos una transformación de 50px hacia abajo */
+  transition: all 1s ease; /* Agregamos una transición suave para la transformación */
+
+}
+
+/*------ Three columns ------*/
+.titule{
+/* le saqué: "display: flex;" y se alineó al centro */
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  padding: 30px;
+  font-size: 2em;
+}
+
+.container-col {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.col{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 10px;
+  padding: 30px;
+  border: 2px solid var(--text-color);
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.col:hover {
+  border-color: var(--primary-bg-color);
+}
+
+@media (max-width: 768px) {
+  .col {
+    flex-basis: 100%;
+  }
+}
+
+.contenedor-col{
+background:red;
+display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/*/////Contacto////*/
+.sectionContacto {
+  margin-top: 60%;
+<<<<<<< HEAD
+  background-image: url(..//images/buda.jpeg)
+=======
+>>>>>>> 65131b146b6ef135243627e5db7602cc031e8363
+  width: 100%;
+  padding: 20px;
+}
+
+.contacto {
+  color: rgb(68, 68, 68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  background-image: url(../images/buda.jpeg);
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+.colContacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  margin-right: 100px;
+}
+
+.fa-whatsapp,
+.fa-square-facebook,
+.fa-instagram {
+  color: white
+}
+
+.fa-whatsapp:hover {
+  color: #25D366;
+}
+
+.fa-square-facebook:hover {
+  color: #144CA3
+}
+
+.fa-instagram:hover {
+  color: #C90188
+}
+
+.mapa {
+  margin-top: 20px;
+}
+
+/*////////formulario/////////////*/
+.contenedorForm {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: column;
+  color: rgb(68, 68, 68);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-right: 20px;
+  font-size: 18px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.form-control {
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+  margin: 10px 0;
+  background: none;
+}
+
+
+.botonEnviar {
+  background: rgb(96, 69, 109);
+  width: 90px;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+}
+
+.botonEnviar:hover {
+  background:  hsl(29, 100%, 56%);
+  width: 90px;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+  height: 50px;
+  color: white;
+  
+}
+
+}
+/*//////FOOTER//////*/
+.footerPosible {
+  background: rgb(96, 69, 109);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerposible-col {
+  padding: 0.5%;
+  margin-top: 10px;
+}
+
+.footerPosible2 {
+  background:  rgb(135, 106, 148);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding-top: 20px;
+}
+
+.footerposible2-col {
+  color: white;
+  padding: 0.5%;
+  justify-content: center;
+}
+
+.google {
+  margin: 10px;
+}
