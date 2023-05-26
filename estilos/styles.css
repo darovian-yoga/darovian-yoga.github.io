@@ -297,7 +297,6 @@ background-color: var(--secondary-bg-color);
   opacity: 0; /* Establecemos la opacidad inicial en 0 para la sección */
   transform: translateY(50px); /* Establecemos una transformación de 50px hacia abajo */
   transition: all 1s ease; /* Agregamos una transición suave para la transformación */
-
 }
 
 /*------ Three columns ------*/
@@ -349,10 +348,6 @@ display: flex;
 /*/////Contacto////*/
 .sectionContacto {
   margin-top: 60%;
-<<<<<<< HEAD
-  background-image: url(..//images/buda.jpeg)
-=======
->>>>>>> 65131b146b6ef135243627e5db7602cc031e8363
   width: 100%;
   padding: 20px;
 }
@@ -446,7 +441,6 @@ display: flex;
   
 }
 
-}
 /*//////FOOTER//////*/
 .footerPosible {
   background: rgb(96, 69, 109);
