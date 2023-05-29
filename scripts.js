@@ -172,27 +172,19 @@ window.addEventListener('scroll', function() {
   }
 });
 
-//Formulario de Validación
-let formu = document.getElementById('fomulario');
-
-formu.addEventListener('submit', function (evento) {
-
-    evento.preventDefault();
-
-    let nombre = document.getElementById('nombreForm').value;
-
-    let mail = document.getElementById('mailForm').value;
-
-    let mensaje = document.getElementById('mensajeForm').value;
-
-    let saludo = 'Hola' + '    ' + '     ' + nombre + '           ' + 'en 48hs hábiles tendrá una respuesta en el correo electrónico ingresado.';
-
-    function hola() {
-
-        return saludo
-    }
-    console.log(document.write(saludo));
-})
+//Formulario de Validación: Faltaria un botón que regrese al index
+//let formu = document.getElementById('fomulario');
+//formu.addEventListener('submit', function (evento) {
+   // evento.preventDefault();
+    //let nombre = document.getElementById('nombreForm').value;
+    //let mail = document.getElementById('mailForm').value;
+    //let mensaje = document.getElementById('mensajeForm').value;
+    //let saludo = 'Hola' + '    ' + '     ' + nombre + '           ' + 'en 48hs hábiles tendrá una respuesta en el correo electrónico ingresado.';
+    //function hola() {
+      //  return saludo
+       // formu.reset()
+    //  console.log(document.write(saludo));
+//})
 
 
 //Recuperación de contraseña
