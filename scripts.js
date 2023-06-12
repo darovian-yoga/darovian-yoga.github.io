@@ -208,3 +208,32 @@ function validarEmail() {
       window.alert('Proporcione una dirección de correo electrónico válida.');
   }
 }
+
+//API
+
+llamarApiCategorias();
+
+function llamarApiCategorias() {
+  var ListaCategorias = document.getElementById("ListaCategorias");
+
+  fetch('https://yoga-api-nzy4.onrender.com/v1/categories')
+    .then(response => response.json())
+    .then(json => {
+      console.log(json);
+      var categorias = traeCategorias(json);
+      ListaCategorias.textContent = categorias.join(', ');
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+function traeCategorias(respuestaApi) {
+  var ListaCategorias = [];
+
+  for (var i = 0; i < respuestaApi.length; i++) {
+    ListaCategorias[i] = respuestaApi[i].category_name;
+  }
+
+  return ListaCategorias;
+}

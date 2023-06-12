@@ -149,6 +149,13 @@
     transform: translateX(-440%);
 }
 
+.API {
+    background-color:  hsl(273, 11%, 60%, 0.801);
+    text-align: center;
+    padding: 2%;
+    margin-top: 5%;
+    width: 100%;
+}
 
 /*.wrap{
     width: 100vw;
